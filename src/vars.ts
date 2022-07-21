@@ -6,7 +6,7 @@ export default {
   api: {
     name: packageJson.name,
     path: cwd(),
-    port: Number(env.API_PORT || 3001)
+    port: Number(env.API_PORT || env.PORT || 3001)
   },
   db: {
     username: env.DB_USER || 'root',
