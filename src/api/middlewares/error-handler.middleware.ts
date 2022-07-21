@@ -1,10 +1,8 @@
-import { NotFoundError } from '$/app/errors'
 import { ErrorRequestHandler } from 'express'
-import { ValidationError } from 'joi'
 
-const errors = {
-  [ValidationError.name]: 400,
-  [NotFoundError.name]: 404
+const errors: Record<string, number> = {
+  ValidationError: 400,
+  NotFoundError: 404
 }
 
 export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {

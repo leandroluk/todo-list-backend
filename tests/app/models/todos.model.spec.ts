@@ -12,7 +12,7 @@ describe('app/models/todos.model', () => {
   beforeEach(sinon.restore)
 
   describe('get', () => {
-    it('should throw if todoDAO.findOne throws', () => {
+    it.only('should throw if TodosDAO.findOne throws', () => {
       sinon.stub(TodosDAO, 'findOne').rejects()
       expect(todosModel.get(1)).to.eventually.be.rejected
     })
@@ -24,7 +24,7 @@ describe('app/models/todos.model', () => {
   })
 
   describe('exists', () => {
-    it('should throw if todoDAO.count throws', () => {
+    it('should throw if TodosDAO.count throws', () => {
       sinon.stub(TodosDAO, 'count').rejects()
       expect(todosModel.exists(1)).to.eventually.be.rejected
     })
@@ -36,7 +36,7 @@ describe('app/models/todos.model', () => {
   })
 
   describe('edit', () => {
-    it('should throw if todoDAO.update throws', () => {
+    it('should throw if TodosDAO.update throws', () => {
       sinon.stub(TodosDAO, 'update').rejects()
       expect(todosModel.edit(1, {})).to.eventually.be.rejected
     })
@@ -48,7 +48,7 @@ describe('app/models/todos.model', () => {
   })
 
   describe('remove', () => {
-    it('should throw if todoDAO.destroy throws', () => {
+    it('should throw if TodosDAO.destroy throws', () => {
       sinon.stub(TodosDAO, 'destroy').rejects()
       expect(todosModel.remove(1)).to.eventually.be.rejected
     })
@@ -60,7 +60,7 @@ describe('app/models/todos.model', () => {
   })
 
   describe('add', () => {
-    it('should throw if todoDAO.create throws', () => {
+    it('should throw if TodosDAO.create throws', () => {
       sinon.stub(TodosDAO, 'create').rejects()
       expect(todosModel.add({} as AddTodo)).to.eventually.be.rejected
     })
@@ -72,7 +72,7 @@ describe('app/models/todos.model', () => {
   })
 
   describe('list', () => {
-    it('should throw if todoDAO.findAll throws', () => {
+    it('should throw if TodosDAO.findAll throws', () => {
       sinon.stub(TodosDAO, 'findAll').rejects()
       expect(todosModel.list()).to.eventually.be.rejected
     })
