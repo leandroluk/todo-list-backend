@@ -2,8 +2,6 @@ import packageJson from 'package.json'
 
 const { env, cwd } = process
 
-console.log(env)
-
 export default {
   api: {
     name: packageJson.name,
