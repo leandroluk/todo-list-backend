@@ -12,7 +12,7 @@ describe('app/models/todos.model', () => {
   beforeEach(sinon.restore)
 
   describe('get', () => {
-    it.only('should throw if TodosDAO.findOne throws', () => {
+    it('should throw if TodosDAO.findOne throws', () => {
       sinon.stub(TodosDAO, 'findOne').rejects()
       expect(todosModel.get(1)).to.eventually.be.rejected
     })

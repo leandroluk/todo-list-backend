@@ -10,7 +10,7 @@
     "lint": "eslint . --fix",
     "watch": "nodemon --ext ts --watch src --exec \"ts-node -r tsconfig-paths/register\" src",
     "db": "sequelize db:drop && sequelize db:create && sequelize db:migrate",
-    "test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.{spec,test}.ts --exit -t 60000",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.{spec,test}.ts --exit",
     "test:coverage": "nyc npm run test"
   },
   "keywords": [],

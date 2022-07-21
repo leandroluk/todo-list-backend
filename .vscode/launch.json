@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // backend
+    {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "backend",
+      "program": "${workspaceFolder}/src",
+      "request": "launch",
+      "restart": true,
+      "args": [
+        "--ext",
+        "ts",
+        "--watch",
+        "src",
+        "--exec",
+        "ts-node -r tsconfig-paths/register"
+      ],
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    // backend:test
+    {
+      "name": "backend:test",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "test",
+        "--",
+        "-t",
+        "999999"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    }
+  ],
+  "compounds": []
+}
