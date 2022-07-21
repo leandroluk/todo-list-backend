@@ -8,7 +8,7 @@ const todos = Array(Math.floor(Math.random() * 10 + 1))
     id: index + 1,
     created_at,
     description: faker.lorem.sentence(),
-    isDone: Math.round(Math.random())
+    is_done: Math.round(Math.random())
   }))
 
 module.exports = {
