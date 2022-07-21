@@ -14,7 +14,6 @@ const sequelize = new Sequelize({
 } as Options)
 
 const TodosDAO = makeTodosDAO(sequelize)
-// const DisksDAO = makeDisksDAO(sequelize)
 
 const models = {
   TodosDAO
