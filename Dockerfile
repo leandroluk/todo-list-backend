@@ -1,7 +1,14 @@
 FROM node
 WORKDIR /app
 ENV API_PORT=3001 \
-    MYSQL_URI="mysql://root:root@localhost:3306/todos"
+    DB_USER="root" \
+    DB_PASS="root" \
+    DB_NAME="todos" \
+    DB_HOST="localhost" \
+    DB_PORT=3306 \
+    DB_DIALECT="mysql" \
+    DB_OPTIONS="{}",
+
 COPY . .
 RUN npm install
 CMD [ "npm", "start" ]

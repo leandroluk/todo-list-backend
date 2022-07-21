@@ -1,11 +1,17 @@
 import vars from '$/vars'
-import { Sequelize } from 'sequelize'
+import { Options, Sequelize } from 'sequelize'
 import makeTodosDAO from './daos/todos.dao'
 
-const sequelize = new Sequelize(vars.mysql.uri, {
-  dialect: 'mysql',
+const sequelize = new Sequelize({
+  username: vars.db.username,
+  password: vars.db.password,
+  database: vars.db.database,
+  host: vars.db.host,
+  port: vars.db.port,
+  dialect: vars.db.dialect,
+  dialectOptions: vars.db.dialectOptions,
   logging: false
-})
+} as Options)
 
 const TodosDAO = makeTodosDAO(sequelize)
 // const DisksDAO = makeDisksDAO(sequelize)
