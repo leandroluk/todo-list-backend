@@ -11,7 +11,8 @@
     "lint": "eslint . --fix",
     "db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.{spec,test}.ts --exit",
-    "test:coverage": "nyc npm run test"
+    "test:coverage": "nyc npm run test",
+    "compose": "docker-compose down && docker-compose up -d"
   },
   "keywords": [],
   "author": "",
