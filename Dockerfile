@@ -7,8 +7,7 @@ ENV API_PORT=3001 \
     DB_HOST="localhost" \
     DB_PORT=3306 \
     DB_DIALECT="mysql" \
-    DB_OPTIONS="{}",
-
+    DB_OPTIONS="{}"
 COPY . .
-RUN npm install
-CMD [ "npm", "start" ]
+RUN npm i --production --silent
+CMD ["node", "-r", "tsconfig-paths/register", "src"]
