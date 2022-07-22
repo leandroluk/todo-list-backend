@@ -24,8 +24,9 @@ export const todosModel = {
   },
 
   async add (data: AddTodo): Promise<Todo['id']> {
-    const model = await TodosDAO.create({ ...data, createdAt: new Date() })
-    return model.getDataValue('id')
+    const { id } = await TodosDAO
+      .create({ ...data, createdAt: new Date() }) as unknown as Todo
+    return id
   },
 
   async list (): Promise<Todo[]> {
