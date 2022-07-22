@@ -66,8 +66,8 @@ describe('app/models/todos.model', () => {
     })
 
     it('should return result', () => {
-      sinon.stub(TodosDAO, 'create').resolves()
-      return expect(todosModel.add({} as AddTodo)).to.eventually.be.undefined
+      sinon.stub(TodosDAO, 'create').resolves({ id: 1 } as any)
+      return expect(todosModel.add({} as AddTodo)).to.eventually.equal(1)
     })
   })
 

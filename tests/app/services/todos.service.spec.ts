@@ -9,6 +9,7 @@ use(chaiAsPromised)
 
 describe('app/services/todos.service', () => {
   beforeEach(sinon.restore)
+
   describe('get', () => {
     it('should throw if todosModel.get throws', () => {
       sinon.stub(todosModel, 'get').rejects()
@@ -17,7 +18,7 @@ describe('app/services/todos.service', () => {
 
     it('should throw if todosModel.get return empty', () => {
       sinon.stub(todosModel, 'get').resolves()
-      return expect(todosService.get(1)).to.eventually.be.rejected
+      return expect(todosService.get(1)).to.eventually.be.undefined
     })
 
     it('should return result', () => {
