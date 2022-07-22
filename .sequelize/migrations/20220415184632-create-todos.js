@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false
       },
       isDone: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         field: 'is_done'
       },
