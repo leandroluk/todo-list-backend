@@ -10,4 +10,4 @@ ENV API_PORT=3001 \
     DB_OPTIONS="{}"
 COPY . .
 RUN npm i --production --silent
-CMD ["node", "-r", "tsconfig-paths/register", "src"]
+CMD ["node", "start"]
