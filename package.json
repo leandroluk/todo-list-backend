@@ -7,7 +7,7 @@
     "dev": "nodemon --ext ts --watch src --exec \"ts-node -r tsconfig-paths/register\" src",
     "build": "rimraf dist && tsc -p ./tsconfig-build.json",
     "serve": "npm run build && npm start",
-    "start": "cd dist && node -r tsconfig-paths/register src",
+    "start": "node -r tsconfig-paths/register src",
     "lint": "eslint . --fix",
     "db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.{spec,test}.ts --exit",
